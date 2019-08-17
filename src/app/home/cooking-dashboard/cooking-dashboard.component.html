@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item>
+  <ion-item lines="none">
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 1: วัตถุดิบ</h3>
@@ -11,7 +11,7 @@
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item>
+  <ion-item lines="none" [disabled]="true">
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 2: เครื่องปรุงรส</h3>
@@ -23,7 +23,7 @@
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item>
+  <ion-item lines="none" [disabled]="true">
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 3: จำนวนผู้รับประทาน</h3>
@@ -31,7 +31,13 @@
       <ion-card-content>
         ระบุจำนวนผู้รับประทานอาหาร
       </ion-card-content>
-
+      <ion-item>
+        <ion-label>ผู้รับประทานจำนวน: </ion-label>
+        <ion-input></ion-input>
+      </ion-item>
     </ion-card>
   </ion-item>
+  <ion-row justify-content-center >
+    <ion-button size="large" [disabled]="true">คำนวณวัตถุดิบ</ion-button>
+  </ion-row>
 </ion-list>

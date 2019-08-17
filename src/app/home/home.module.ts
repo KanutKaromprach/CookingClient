@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { CookingDashboardComponent } from './cooking-dashboard/cooking-dashboard.component';
+import { CookingDetailComponent } from './cooking-detail/cooking-detail.component';
 
 @NgModule({
   imports: [
@@ -16,9 +17,13 @@ import { CookingDashboardComponent } from './cooking-dashboard/cooking-dashboard
       {
         path: '',
         component: HomePage
+      },
+      {
+        path: 'cooking-detail/:type',
+        component: CookingDetailComponent
       }
     ])
   ],
-  declarations: [HomePage, CookingDashboardComponent]
+  declarations: [HomePage, CookingDashboardComponent, CookingDetailComponent]
 })
-export class HomePageModule {}
+export class HomePageModule { }

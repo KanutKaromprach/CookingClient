@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cooking-dashboard',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookingDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  goToDetail(type: string): void {
+    this.navController.navigateForward('/home/cooking-detail/' + type);
+  }
 
 }

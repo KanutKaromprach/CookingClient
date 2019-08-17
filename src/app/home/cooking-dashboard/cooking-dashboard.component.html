@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item lines="none">
+  <ion-item lines="none" [disabled]="false" (click)="goToDetail('วัตถุดิบ')">
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 1: วัตถุดิบ</h3>
@@ -11,7 +11,7 @@
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item lines="none" [disabled]="true">
+  <ion-item lines="none" [disabled]="false" (click)="goToDetail('เครื่องปรุงรส')">
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 2: เครื่องปรุงรส</h3>

@@ -1,5 +1,7 @@
 {
   "name": "CookingClient",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

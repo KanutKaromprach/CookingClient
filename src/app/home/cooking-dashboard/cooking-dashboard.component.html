@@ -1,6 +1,7 @@
 <ion-list>
   <ion-item lines="none" [disabled]="false" (click)="goToDetail('วัตถุดิบ')">
     <ion-card class="card-view">
+      <img src="../assets/food/food1.jpg" height="220" width="280" />
       <ion-item>
         <h3>STEP 1: วัตถุดิบ</h3>
       </ion-item>
@@ -11,8 +12,9 @@
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item lines="none" [disabled]="false" (click)="goToDetail('เครื่องปรุงรส')">
+  <ion-item lines="none" [disabled]="true" (click)="goToDetail('เครื่องปรุงรส')">
     <ion-card class="card-view">
+      <img src="../assets/food/food2.jpg" height="220" width="280" />
       <ion-item>
         <h3>STEP 2: เครื่องปรุงรส</h3>
       </ion-item>
@@ -37,7 +39,7 @@
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-row justify-content-center >
+  <ion-row justify-content-center>
     <ion-button size="large" [disabled]="true">คำนวณวัตถุดิบ</ion-button>
   </ion-row>
 </ion-list>

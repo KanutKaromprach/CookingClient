@@ -10,9 +10,10 @@ import { CookingService } from 'src/app/service/cooking.service';
 })
 export class CookingDashboardComponent implements OnInit {
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController, private cookingService: CookingService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   goToDetail(type: string): void {
     this.navController.navigateForward('/home/cooking-detail/' + type);

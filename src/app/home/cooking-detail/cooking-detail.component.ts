@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Cooking } from 'src/app/model/cooking';
 import { CookingService } from 'src/app/service/cooking.service';
 import { CookingMaterial } from 'src/app/model/cookingMaterial';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cooking-detail',
@@ -16,13 +17,22 @@ export class CookingDetailComponent implements OnInit {
   type: string;
   cooking: Cooking;
 
-  constructor(private route: ActivatedRoute, private cookingService: CookingService) { }
+  constructor(private route: ActivatedRoute, private cookingService: CookingService, private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.type = this.route.snapshot.paramMap.get('type');
-    this.cookingService.getCookingByUsrtrname('ball').subscribe((result) => {
+    this.cookingService.getCookingByUsertrname('ball').subscribe((result) => {
       this.cooking = result;
-      this.addMoreIngredient();
+      if (!this.cooking.ingredient.length) {
+        this.addMoreIngredient();
+      }
+    });
+  }
+
+  save() {
+    this.cooking.ingredient.forEach(o => o.type = 'เนื้อสัตว์');
+    this.cookingService.updateCooking(this.cooking).subscribe((result) => {
+      this.presentLoadingWithOptions();
     });
   }
 
@@ -34,6 +44,17 @@ export class CookingDetailComponent implements OnInit {
     if (this.cooking.ingredient.length > 1) {
       this.cooking.ingredient.splice(index, 1);
     }
+  }
+
+  async presentLoadingWithOptions() {
+    const loading = await this.loadingController.create({
+      spinner: null,
+      duration: 200,
+      message: 'Save ...',
+      translucent: true,
+      cssClass: 'custom-class custom-loading'
+    });
+    return await loading.present();
   }
 
 }

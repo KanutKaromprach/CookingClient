@@ -11,7 +11,11 @@ export class CookingService {
 
   constructor(private http: HttpClient) { }
 
-  getCookingByUsrtrname(username: string): Observable<Cooking> {
+  getCookingByUsertrname(username: string): Observable<Cooking> {
     return this.http.get<Cooking>(`${environment.baseUrl}/api/cooking/${username}`);
+  }
+
+  updateCooking(cooking: Cooking): Observable<Cooking> {
+    return this.http.put<Cooking>(`${environment.baseUrl}/api/cooking/update`, cooking);
   }
 }

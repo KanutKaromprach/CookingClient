@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item lines="none" [disabled]="false" (click)="goToDetail('วัตถุดิบ')">
+  <ion-item lines="none"  (click)="goToDetail('วัตถุดิบ')">
     <ion-card class="card-view">
       <img src="../assets/food/food1.jpg" height="220" width="280" />
       <ion-item>
@@ -8,11 +8,11 @@
       <ion-card-content>
         เลือกวัตถุดิบและปริมาณที่จะใช้ในการปรุงอาหาร
       </ion-card-content>
-      <ion-item detail>
+      <ion-item lines="none" detail>
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item lines="none" [disabled]="false" (click)="goToDetail('เครื่องปรุงรส')">
+  <ion-item lines="none" (click)="goToDetail('เครื่องปรุงรส')">
     <ion-card class="card-view">
       <img src="../assets/food/food2.jpg" height="220" width="280" />
       <ion-item>
@@ -21,11 +21,11 @@
       <ion-card-content>
         เลือกเครื่องปรุงที่ใช้ในการประกอบอาหาร
       </ion-card-content>
-      <ion-item detail>
+      <ion-item lines="none" detail>
       </ion-item>
     </ion-card>
   </ion-item>
-  <ion-item lines="none" [disabled]="false">
+  <ion-item lines="none" >
     <ion-card class="card-view">
       <ion-item>
         <h3>STEP 3: จำนวนผู้รับประทาน</h3>
@@ -33,13 +33,13 @@
       <ion-card-content>
         ระบุจำนวนผู้รับประทานอาหาร
       </ion-card-content>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label style="margin-right: 5px;">ผู้รับประทานจำนวน: </ion-label>
         <ion-input></ion-input>
       </ion-item>
     </ion-card>
   </ion-item>
   <ion-row justify-content-center>
-    <ion-button size="large" [disabled]="false">คำนวณวัตถุดิบ</ion-button>
+    <ion-button size="large" >คำนวณวัตถุดิบ</ion-button>
   </ion-row>
 </ion-list>

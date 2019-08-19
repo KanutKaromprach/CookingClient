@@ -23,26 +23,30 @@ export class CookingDetailComponent implements OnInit {
     this.type = this.route.snapshot.paramMap.get('type');
     this.cookingService.getCookingByUsertrname('ball').subscribe((result) => {
       this.cooking = result;
-      if (!this.cooking.ingredient.length) {
-        this.addMoreIngredient();
+      if (!this.cooking.ingredientMeat.length) {
+        this.addMoreIngredient('ingredientMeat');
+      }
+      if (!this.cooking.ingredientVeg.length) {
+        this.addMoreIngredient('ingredientVeg');
       }
     });
   }
 
   save() {
-    this.cooking.ingredient.forEach(o => o.type = 'เนื้อสัตว์');
+    this.cooking.ingredientMeat.forEach(o => o.type = 'เนื้อสัตว์');
+    this.cooking.ingredientVeg.forEach(o => o.type = 'ผักผลไม้');
     this.cookingService.updateCooking(this.cooking).subscribe((result) => {
       this.presentLoadingWithOptions();
     });
   }
 
-  addMoreIngredient() {
-    this.cooking.ingredient.push(new CookingMaterial());
+  addMoreIngredient(type: string) {
+    this.cooking[type].push(new CookingMaterial());
   }
 
-  deleteIngredient(index: number) {
-    if (this.cooking.ingredient.length > 1) {
-      this.cooking.ingredient.splice(index, 1);
+  deleteIngredient(type: string, index: number) {
+    if (this.cooking[type].length > 1) {
+      this.cooking[type].splice(index, 1);
     }
   }
 

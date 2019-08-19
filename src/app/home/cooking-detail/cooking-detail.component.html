@@ -16,15 +16,40 @@
         <img src="../assets/food/image.jpg" height="180" width="120" />
         <ion-item>
           <h4>เนื้อสัตว์</h4>
-          <ion-icon name="add-circle-outline" slot="end" (click)="addMoreIngredient()"></ion-icon>
+          <ion-icon name="add-circle-outline" slot="end" (click)="addMoreIngredient('ingredientMeat')"></ion-icon>
         </ion-item>
-
         <div *ngIf="cooking">
-          <div *ngFor="let detail of cooking.ingredient; let i = index">
+          <div *ngFor="let detail of cooking.ingredientMeat; let i = index">
             <ion-card>
-
               <ion-item class="input-width">
-                <ion-label position="stacked">เนื้อสัตว์</ion-label>
+                <ion-label position="stacked">ชื่อเนื้อสัตว์</ion-label>
+                <ion-input clearInput [(ngModel)]="detail.name" color="medium" required></ion-input>
+              </ion-item>
+              <ion-item class="input-width">
+                <ion-label position="stacked">ปริมาณ (กรัม)</ion-label>
+                <ion-input type="number" clearInput [(ngModel)]="detail.quantity" color="medium"></ion-input>
+              </ion-item>
+              <ion-item lines="none" style="margin: 0px;">
+                <ion-icon name="save" slot="end" (click)="save()"></ion-icon>
+                <ion-icon slot="end" name="trash" (click)="deleteIngredient('ingredientMeat', i)"></ion-icon>
+              </ion-item>
+            </ion-card>
+          </div>
+        </div>
+      </ion-card>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card style="width: 100%">
+        <img src="../assets/food/image3.jpg" height="180" width="120" />
+        <ion-item>
+          <h4>ผักและผลไม้</h4>
+          <ion-icon name="add-circle-outline" slot="end" (click)="addMoreIngredient('ingredientVeg')"></ion-icon>
+        </ion-item>
+        <div *ngIf="cooking">
+          <div *ngFor="let detail of cooking.ingredientVeg; let i = index">
+            <ion-card>
+              <ion-item class="input-width">
+                <ion-label position="stacked">ชื่อผัก/ผลไม้</ion-label>
                 <ion-input clearInput [(ngModel)]="detail.name" color="medium"></ion-input>
               </ion-item>
               <ion-item class="input-width">
@@ -33,12 +58,11 @@
               </ion-item>
               <ion-item lines="none" style="margin: 0px;">
                 <ion-icon name="save" slot="end" (click)="save()"></ion-icon>
-                <ion-icon slot="end" name="trash" (click)="deleteIngredient(i)"></ion-icon>
+                <ion-icon slot="end" name="trash" (click)="deleteIngredient('ingredientVeg', i)"></ion-icon>
               </ion-item>
             </ion-card>
           </div>
         </div>
-
       </ion-card>
     </ion-item>
   </ion-list>

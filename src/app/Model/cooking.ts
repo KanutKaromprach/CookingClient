@@ -4,12 +4,14 @@ export class Cooking {
     id: string;
     username: string;
     password: string;
-    ingredient: Array<CookingMaterial>;
+    ingredientMeat: Array<CookingMaterial>;
+    ingredientVeg: Array<CookingMaterial>;
     seasoning: Array<CookingMaterial>;
     person: number;
     status: boolean;
 
     constructor() {
-        this.ingredient = new Array<CookingMaterial>();
+        this.ingredientMeat = new Array<CookingMaterial>();
+        this.ingredientVeg = new Array<CookingMaterial>();
     }
 }

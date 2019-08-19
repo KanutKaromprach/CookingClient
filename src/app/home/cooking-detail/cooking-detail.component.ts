@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Cooking } from 'src/app/model/cooking';
 import { CookingService } from 'src/app/service/cooking.service';
 import { CookingMaterial } from 'src/app/model/cookingMaterial';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cooking-detail',

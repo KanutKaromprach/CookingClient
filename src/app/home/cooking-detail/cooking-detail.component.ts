@@ -29,12 +29,16 @@ export class CookingDetailComponent implements OnInit {
       if (!this.cooking.ingredientVeg.length) {
         this.addMoreIngredient('ingredientVeg');
       }
+      if (!this.cooking.ingredientVeg.length) {
+        this.addMoreIngredient('seasoning');
+      }
     });
   }
 
   save() {
     this.cooking.ingredientMeat.forEach(o => o.type = 'เนื้อสัตว์');
     this.cooking.ingredientVeg.forEach(o => o.type = 'ผักผลไม้');
+    this.cooking.seasoning.forEach(o => o.type = 'เครื่องปรุง');
     this.cookingService.updateCooking(this.cooking).subscribe((result) => {
       this.presentLoadingWithOptions();
     });

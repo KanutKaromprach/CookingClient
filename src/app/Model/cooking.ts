@@ -13,5 +13,7 @@ export class Cooking {
     constructor() {
         this.ingredientMeat = new Array<CookingMaterial>();
         this.ingredientVeg = new Array<CookingMaterial>();
+        this.seasoning = new Array<CookingMaterial>();
+        this.person = 0;
     }
 }

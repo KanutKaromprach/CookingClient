@@ -18,4 +18,12 @@ export class CookingService {
   updateCooking(cooking: Cooking): Observable<Cooking> {
     return this.http.put<Cooking>(`${environment.baseUrl}/api/cooking/update`, cooking);
   }
+
+  createCooking(cooking: Cooking): Observable<Cooking> {
+    return this.http.post<Cooking>(`${environment.baseUrl}/api/cooking/create`, cooking);
+  }
+
+  updateProfile(cooking: Cooking): Observable<Cooking> {
+    return this.http.put<Cooking>(`${environment.baseUrl}/api/cooking/profile/update`, cooking);
+  }
 }

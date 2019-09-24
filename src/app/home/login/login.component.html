@@ -1,0 +1,33 @@
+<ion-content padding>
+    
+        <img src="../assets/food/xxx.png" class="center-img" style="background-color: #3E3D3D; margin-left: 15px;"/>
+  <ion-card style="background-color: #CD5D33;  margin-bottom: 50%">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item style="margin-bottom: 10px;">
+              <ion-icon name="contact" style="font-size: 33px; margin-right: 10px;"></ion-icon>
+              <ion-input placeholder="Username" [(ngModel)]="username" style="font-size: 18px;"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="hand" style="font-size: 33px; margin-right: 10px;"></ion-icon>
+              <ion-input type="password" placeholder="Password" [(ngModel)]="password" style="font-size: 18px;"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button color="dark" expand="block" style="height: 50px;" (click)="goToHome()">Login</ion-button>
+            <ion-button class="facebook" style="height: 50px; margin-top: 10px;" expand="block" (click)="goToHome()">
+              <ion-icon slot="start" name="logo-facebook" style="font-size: 30px;"></ion-icon> Login with Facebook
+            </ion-button>
+          </div>
+          <div padding>
+            <ion-label color="light"><a (click)="goToRegister()"
+                style="color: white; font-size: 16px; margin-right: 20px;"><strong>สมัครสมาชิก</strong></a></ion-label>
+            <ion-label color="light"><a style="color: white; font-size: 16px;">ลืมรหัสผ่าน</a></ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

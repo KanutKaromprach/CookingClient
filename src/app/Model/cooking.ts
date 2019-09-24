@@ -1,4 +1,5 @@
 import { CookingMaterial } from './cookingMaterial';
+import { UserProfile } from './userProfile';
 
 export class Cooking {
     id: string;
@@ -7,13 +8,12 @@ export class Cooking {
     ingredientMeat: Array<CookingMaterial>;
     ingredientVeg: Array<CookingMaterial>;
     seasoning: Array<CookingMaterial>;
+    noodle: Array<CookingMaterial>;
     person: number;
     status: boolean;
+    userProfile: UserProfile;
 
     constructor() {
-        this.ingredientMeat = new Array<CookingMaterial>();
-        this.ingredientVeg = new Array<CookingMaterial>();
-        this.seasoning = new Array<CookingMaterial>();
         this.person = 0;
     }
 }

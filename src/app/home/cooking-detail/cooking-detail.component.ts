@@ -16,22 +16,15 @@ export class CookingDetailComponent implements OnInit {
 
   type: string;
   cooking: Cooking;
+  username: string;
 
   constructor(private route: ActivatedRoute, private cookingService: CookingService, private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.type = this.route.snapshot.paramMap.get('type');
-    this.cookingService.getCookingByUsertrname('ball').subscribe((result) => {
+    this.username = this.route.snapshot.paramMap.get('username');
+    this.cookingService.getCookingByUsertrname(this.username).subscribe((result) => {
       this.cooking = result;
-      if (!this.cooking.ingredientMeat.length) {
-        this.addMoreIngredient('ingredientMeat');
-      }
-      if (!this.cooking.ingredientVeg.length) {
-        this.addMoreIngredient('ingredientVeg');
-      }
-      if (!this.cooking.ingredientVeg.length) {
-        this.addMoreIngredient('seasoning');
-      }
     });
   }
 
@@ -39,7 +32,8 @@ export class CookingDetailComponent implements OnInit {
     this.cooking.ingredientMeat.forEach(o => o.type = 'เนื้อสัตว์');
     this.cooking.ingredientVeg.forEach(o => o.type = 'ผักผลไม้');
     this.cooking.seasoning.forEach(o => o.type = 'เครื่องปรุง');
-    this.cookingService.updateCooking(this.cooking).subscribe((result) => {
+    this.cooking.noodle.forEach(o => o.type = 'เส้น');
+    this.cookingService.updateCooking(this.cooking).subscribe(() => {
       this.presentLoadingWithOptions();
     });
   }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController } from '@ionic/angular';
 import { Cooking } from 'src/app/model/cooking';
 import { CookingService } from 'src/app/service/cooking.service';
+import { ActivatedRoute } from '@angular/router';
+import { CookingMaterial } from 'src/app/model/cookingMaterial';
 
 @Component({
   selector: 'app-cooking-dashboard',
@@ -11,25 +13,36 @@ import { CookingService } from 'src/app/service/cooking.service';
 export class CookingDashboardComponent implements OnInit {
 
   cooking: Cooking;
+  username: string;
 
   constructor(private navController: NavController,
               private cookingService: CookingService,
-              private loadingController: LoadingController) { }
+              private loadingController: LoadingController,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.cookingService.getCookingByUsertrname('ball').subscribe((result) => {
+    this.username = this.route.snapshot.paramMap.get('username');
+    this.cookingService.getCookingByUsertrname(this.username).subscribe((result) => {
       this.cooking = result;
     });
   }
 
   goToDetail(type: string): void {
-    this.navController.navigateForward('/home/cooking-detail/' + type);
+    this.navController.navigateForward('/home/cooking-detail/' + type + '/' + this.username);
   }
 
-  save() {
-    this.cookingService.updateCooking(this.cooking).subscribe((result) => {
-      this.presentLoadingWithOptions();
+  save(cookingDataPerson: number) {
+    this.cookingService.getCookingByUsertrname(this.username).subscribe((result) => {
+      this.cooking = result;
+      this.cooking.person = cookingDataPerson;
+      this.cookingService.updateCooking(this.cooking).subscribe((result2) => {
+        this.presentLoadingWithOptions();
+      });
     });
+  }
+
+  goToSummary(id: string): void {
+    this.navController.navigateForward('/home/cooking-summary/' + id);
   }
 
   async presentLoadingWithOptions() {
@@ -42,5 +55,6 @@ export class CookingDashboardComponent implements OnInit {
     });
     return await loading.present();
   }
+
 
 }

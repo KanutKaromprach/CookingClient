@@ -1,50 +1,48 @@
 <div *ngIf="cooking">
   <ion-list>
-    <ion-item lines="none" (click)="goToDetail('วัตถุดิบ')">
-      <ion-card class="card-view">
+    <ion-item lines="none" (click)="goToDetail('วัตถุดิบ')" style="margin-right: 10px">
+      <ion-card class="card-view" >
         <img src="../assets/food/food1.jpg" height="220" width="280" />
-        <ion-item>
+        <ion-item lines="none" color="dark">
           <h3>STEP 1: วัตถุดิบ</h3>
         </ion-item>
         <ion-card-content>
-          เลือกวัตถุดิบและปริมาณที่จะใช้ในการปรุงอาหาร
+          เลือกวัตถุดิบที่ใช้ประกอบอาหาร
         </ion-card-content>
         <ion-item lines="none" detail>
         </ion-item>
       </ion-card>
     </ion-item>
-    <ion-item lines="none" (click)="goToDetail('เครื่องปรุงรส')">
+    <ion-item lines="none" (click)="goToDetail('เครื่องปรุงรส')" style="margin-right: 10px">
       <ion-card class="card-view">
         <img src="../assets/food/food2.jpg" height="220" width="280" />
-        <ion-item>
+        <ion-item lines="none" color="dark" >
           <h3>STEP 2: เครื่องปรุงรส</h3>
         </ion-item>
         <ion-card-content>
-          เลือกเครื่องปรุงที่ใช้ในการประกอบอาหาร
+          เลือกเครื่องปรุงที่ใช้ปรุงอาหาร
         </ion-card-content>
         <ion-item lines="none" detail>
         </ion-item>
       </ion-card>
     </ion-item>
-    <ion-item lines="none">
+    <ion-item lines="none" style="margin-right: 10px">
       <ion-card class="card-view">
-        <ion-item>
-          <h3>STEP 3: จำนวนผู้รับประทาน</h3>
+        <ion-item lines="none" color="dark">
+          <h3>STEP 3: ผู้รับประทาน</h3>
         </ion-item>
-        <ion-card-content>
-          ระบุจำนวนผู้รับประทานอาหาร
-        </ion-card-content>
         <ion-item lines="none">
-          <ion-label style="margin-right: 5px;">ผู้รับประทานจำนวน: </ion-label>
-          <ion-input type="number" clearInput [(ngModel)]="cooking.person" color="medium"></ion-input>
-        </ion-item>
+          <ion-label >ผู้รับประทานจำนวน: </ion-label>
+          <ion-input type="number" [(ngModel)]="cooking.person" color="medium"></ion-input>
+          <ion-label>คน</ion-label>
+        </ion-item> 
         <ion-item lines="none" style="margin: 0px;">
-          <ion-icon name="save" slot="end" (click)="save()"></ion-icon>
+          <ion-icon name="save" slot="end" (click)="save(cooking.person)"></ion-icon>
         </ion-item>
       </ion-card>
     </ion-item>
     <ion-row justify-content-center>
-      <ion-button size="large">คำนวณวัตถุดิบ</ion-button>
+      <ion-button size="large" (click)="goToSummary(cooking.username)">คำนวณวัตถุดิบ</ion-button>
     </ion-row>
   </ion-list>
 </div>

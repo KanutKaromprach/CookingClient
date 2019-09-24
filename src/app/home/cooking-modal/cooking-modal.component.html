@@ -1,0 +1,176 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="end" (click)="dismiss();" style="color: white; margin-right: 10px;">
+      Close
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="navParams.get('name') === 'กระเพราหมูชิ้น'" style="padding-bottom: 20px;">
+    <ion-item lines="none" style="padding-left: 25px;">
+      <h1>กระเพราหมูชิ้น</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="../assets/food/01.jpg" class="center-img" />
+    </ion-item>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>ส่วนผสม</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1) เนื้อหมูหั่นเป็นชิ้น {{navParams.get('quantity') + navParams.get('lost')}} กรัม<br>
+        2) พริกขี้หนูแดงทุบพอแหลก 5 เม็ด<br>
+        3) กระเทียม<br>
+        4) ซีอิ๊วขาว 2 ช้อนโต๊ะ<br>
+        5) ซอสหอยนางรม 1 ช้อนโต๊ะ<br>
+        6) น้ำตาลทราย 1/2 ช้อนชา<br>
+        7) น้ำมันพืช 2 ช้อนโต๊ะ<br>
+        8) ใบกระเพรา 2 กำใหญ่ๆ<br>
+      </ion-item>
+    </ion-card>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>วิธีทำ</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1. ตั้งกระทะให้ร้อน ใส่น้ำมันพืช ใส่กระเทียมสับ และพริกขี้หนูลงผัดจนหอม<br>
+        2. ใส่เนื้อหมู ผัดจนสุกปานกลาง เติมน้ำและปรุงรสด้วยซีอิ๊วขาว ซอสหอยนางรม น้ำตาลทราย ชิมรสตามชอบ<br>
+        3. ใส่ใบกระเพราลงไปผัดสักครู่ ตักเสิร์ฟใส่จาน<br>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="navParams.get('name') === 'กระเพราไก่'" style="padding-bottom: 20px;">
+    <ion-item lines="none" style="padding-left: 25px;">
+      <h1>กระเพราไก่</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="../assets/food/06.jpg" class="center-img" />
+    </ion-item>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>ส่วนผสม</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1) เนื้อไก่ {{navParams.get('quantity') + navParams.get('lost')}} กรัม<br>
+        2) น้ำมัน 1 ช้อนโต๊ะ<br>
+        3) กระเพราะ 1 กำ<br>
+        4) พริกอ่อนเขียว 3 เม็ดใหญ่<br>
+        5) พริกชี้ฟ้าแดง 6 เม็ด<br>
+        6) กระเทียม 4 เม็ด<br>
+        7) น้ำตาล 2 ช้อนชา<br>
+        8) ซอสหอย 1 ช้อนโต๊ะ<br>
+        9) ซอสภูเขาฝาเขียว 2 ช้อนชา<br>
+      </ion-item>
+    </ion-card>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>วิธีทำ</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1. ล้างไก่ให้สะอาด หั่นสับตามใจชอบ<br>
+        2. เตรียมหั่นพริกอ่อน โคลกพริกชี้ฟ้าแดงกับกระเทียม เด็ดกระเพรา<br>
+        3. ตั้งกระทะใส่น้ำมันเล็กน้อย น้ำพริกกระเทียมที่โขลกผัดให้หอมเหลือง จากนั้นใส่ไก่ ผัดจนสุก เติมเครื่องปรุงรส
+        ซอสภูเขา ซอสหอย น้ำตาล รสดี ถูกใจตามใจชอบถ้าแห้งไปเติมน้ำเล็กน้อย ใส่พริกอ่อน ผัดรัวๆ ใส่กระเพรา
+        จัดใส่จานพร้อมข้าวสวยร้อนๆ<br>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="navParams.get('name') === 'กระเพราหมูกรอบ'" style="padding-bottom: 20px;">
+    <ion-item lines="none" style="padding-left: 25px;">
+      <h1>กระเพราหมูกรอบ</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="../assets/food/03.jpg" class="center-img" />
+    </ion-item>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>ส่วนผสม</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1) หมูกรอบ {{navParams.get('quantity') + navParams.get('lost')}} กรัม<br>
+        2) พริกขี้หนูแดงทุบพอแหลก 5 เม็ด<br>
+        3) กระเทียม<br>
+        4) ซีอิ๊วขาว 2 ช้อนโต๊ะ<br>
+        5) ซอสหอยนางรม 1 ช้อนโต๊ะ<br>
+        6) น้ำตาลทราย 1/2 ช้อนชา<br>
+        7) น้ำมันพืช 2 ช้อนโต๊ะ<br>
+        8) ใบกระเพรา 2 กำใหญ่ๆ<br>
+      </ion-item>
+    </ion-card>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>วิธีทำ</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1. ตั้งกระทะให้ร้อน ใส่น้ำมันพืช ใส่กระเทียมสับ และพริกขี้หนูลงผัดจนหอม<br>
+        2. ใส่เนื้อหมูกรอบลงไปผัด เติมน้ำและปรุงรสด้วยซีอิ๊วขาว ซอสหอยนางรม น้ำตาลทราย ชิมรสตามชอบ<br>
+        3. ใส่ใบกระเพราลงไปผัดสักครู่ ตักเสิร์ฟใส่จาน<br>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="navParams.get('name') === 'หมูทอดกระเทียม'" style="padding-bottom: 20px;">
+    <ion-item lines="none" style="padding-left: 25px;">
+      <h1>หมูทอดกระเทียม</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="../assets/food/05.jpg" class="center-img" />
+    </ion-item>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>ส่วนผสม</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1) เนื้อหมู {{navParams.get('quantity') + navParams.get('lost')}} กรัม<br>
+        2) กระเทียม 1/2 ถ้วยตวง<br>
+        3) น้ำมันหอย 1 ช้อนโต๊ะ<br>
+        4) ซีอิ้วขาว 1 ช้อนโต๊ะ<br>
+        5) น้ำตาล 1 ช้อนชา<br>
+        6) น้ำมัน 1 ช้อนโต๊ะ<br>
+        7) พริกไทยโรยหน้า<br>
+      </ion-item>
+    </ion-card>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>วิธีทำ</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1. ตั้งกระทะให้ร้อน ใส่น้ำมันพืช ใส่กระเทียมสับ และพริกขี้หนูลงผัดจนหอม<br>
+        2. ใส่เนื้อหมูกรอบลงไปผัด เติมน้ำและปรุงรสด้วยซีอิ๊วขาว ซอสหอยนางรม น้ำตาลทราย ชิมรสตามชอบ<br>
+        3. ใส่ใบกระเพราลงไปผัดสักครู่ ตักเสิร์ฟใส่จาน<br>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="navParams.get('name') === 'ไก่ทอดกระเทียม'" style="padding-bottom: 20px;">
+    <ion-item lines="none" style="padding-left: 25px;">
+      <h1>ไก่ทอดกระเทียม</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="../assets/food/07.jpg" class="center-img" />
+    </ion-item>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>ส่วนผสม</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1) เนื้อไก่ {{navParams.get('quantity') + navParams.get('lost')}} กรัม<br>
+        2) กระเทียม 1/2 ถ้วยตวง<br>
+        3) น้ำมันหอย 1 ช้อนโต๊ะ<br>
+        4) ซีอิ้วขาว 1 ช้อนโต๊ะ<br>
+        5) น้ำตาล 1 ช้อนชา<br>
+        6) น้ำมัน 1 ช้อนโต๊ะ<br>
+        7) พริกไทยโรยหน้า<br>
+      </ion-item>
+    </ion-card>
+    <ion-card class="center">
+      <ion-item lines="none" color="warning">
+        <ion-label slot="start" style="color:black"><strong>วิธีทำ</strong></ion-label>
+      </ion-item>
+      <ion-item lines="none" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">
+        1. ตั้งกระทะให้ร้อน ใส่น้ำมันพืช ใส่กระเทียมสับ และพริกขี้หนูลงผัดจนหอม<br>
+        2. ใส่เนื้อหมูกรอบลงไปผัด เติมน้ำและปรุงรสด้วยซีอิ๊วขาว ซอสหอยนางรม น้ำตาลทราย ชิมรสตามชอบ<br>
+        3. ใส่ใบกระเพราลงไปผัดสักครู่ ตักเสิร์ฟใส่จาน<br>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

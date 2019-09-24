@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="cooking">
+    <ion-item lines="none">
+      <h2>เมนูอาหารที่สามารถทำได้</h2>
+    </ion-item>
+    <div *ngFor="let x of listObject">
+      <ion-card (click)="showDisclaimer(x)">
+        <ion-item lines="none" color="dark">
+          <ion-label slot="start"><strong>{{x.name}}</strong></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label style="font-size: 15px;" *ngIf="x.people !== null">สำหรับ {{x.people}} ท่าน</ion-label>
+          <ion-label style="font-size: 15px;" color="danger" *ngIf="x.people === null">{{x.warning}} ขาดไป
+            <strong>{{x.lost}}</strong> กรัม</ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

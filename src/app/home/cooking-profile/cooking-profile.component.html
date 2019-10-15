@@ -1,34 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button color="light"></ion-back-button>
-    </ion-buttons>
+    <ion-title slot="start" class="header-title">Profile</ion-title>
+    <ion-back-button color="light" slot="start"></ion-back-button>
     <ion-buttons slot="end">
       <ion-button (click)="save()">
-        <ion-icon name="save" style="color: white; font-size: 40px;"></ion-icon>
+        <ion-label style="color: white;">บันทึก</ion-label>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-item lines="none">
-    <h1>PROFILE</h1>
-  </ion-item>
+  <ion-row style="text-align: center; padding: 5px;" justify-content-center>
+    <ion-icon name="contact" color="medium" style="font-size: 100px;"></ion-icon>
+  </ion-row>
+  <ion-row style="text-align: center; padding: 5px;" justify-content-center>
+    <ion-label style="font-size: 20px;"> {{profile.name}}</ion-label>
+  </ion-row>
   <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">ชื่อ-นามสกุล</ion-label>
-    <ion-input [(ngModel)]="profile.name"></ion-input>
-  </ion-item>
-  <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">ชื่อเล่น</ion-label>
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 10px;">ชื่อเล่น</ion-label>
     <ion-input [(ngModel)]="profile.nickName"></ion-input>
   </ion-item>
   <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">email</ion-label>
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 10px;">email</ion-label>
     <ion-input [(ngModel)]="profile.email"></ion-input>
   </ion-item>
   <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">เบอร์โทรศัพท์</ion-label>
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 10px;">เบอร์โทรศัพท์</ion-label>
     <ion-input [(ngModel)]="profile.tel"></ion-input>
   </ion-item>
 </ion-content>

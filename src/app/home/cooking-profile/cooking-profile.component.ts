@@ -18,13 +18,13 @@ export class CookingProfileComponent implements OnInit {
 
   ngOnInit() {
     this.profile = new UserProfile();
-    this.cookingService.getCookingByUsertrname('Somrat').subscribe((result) => {
+    this.cookingService.getCookingByUsertrname('somrat').subscribe((result) => {
       this.profile = result.userProfile;
     });
   }
 
   save() {
-    this.cookingService.getCookingByUsertrname('Somrat').subscribe((result) => {
+    this.cookingService.getCookingByUsertrname('somrat').subscribe((result) => {
       this.cooking = result;
       this.cooking.userProfile = this.profile;
       this.cookingService.updateProfile(this.cooking).subscribe((result2) => {

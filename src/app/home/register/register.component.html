@@ -1,30 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button color="light"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button (click)="save()">
-        <ion-icon name="save" style="color: white; font-size: 40px;"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-back-button color="light" slot="start"></ion-back-button>
+    <ion-title slot="start" class="header-title">สมัครสมาชิก</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item lines="none">
-    <h1>PROFILE</h1>
-  </ion-item>
-  <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">ชื่อ-นามสกุล</ion-label>
+  <ion-item style="margin-bottom: 5px; margin-top: 10px;">
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 5px;">ชื่อ-นามสกุล</ion-label>
     <ion-input [(ngModel)]="profile.name"></ion-input>
   </ion-item>
-  <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">Username</ion-label>
+  <ion-item style="margin-bottom: 5px;">
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 5px;">Username</ion-label>
     <ion-input [(ngModel)]="cooking.username"></ion-input>
   </ion-item>
-  <ion-item style="margin-bottom: 10px;">
-    <ion-label position="stacked" style="font-size: 20px; margin-bottom: 10px;">Password</ion-label>
+  <ion-item style="margin-bottom: 5px;">
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 5px;">Password</ion-label>
     <ion-input [(ngModel)]="cooking.password" type="password"></ion-input>
   </ion-item>
+  <ion-item style="margin-bottom: 5px;">
+    <ion-label color="medium" position="stacked" style="font-size: 15px; margin-bottom: 5px;">Confirm Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-row style="text-align: center; padding: 5px;" justify-content-center>
+    <ion-button color="primary" expand="block" style="height: 50px; width: 90%; margin-top: 20px;" (click)="save()">
+      สมัครสมาชิก
+    </ion-button>
+  </ion-row>
 </ion-content>
